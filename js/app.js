@@ -12060,11 +12060,11 @@ var Tipu = function () {
     function Tipu() {
         _classCallCheck(this, Tipu);
 
-        var options = {
+        this.client = mqtt.connect("wss://mqtt.dioty.co:8880", {
             username: 'mailtokmahmed@gmail.com',
-            password: '2426f867'
-        };
-        this.client = mqtt.connect("wss://mqtt.dioty.co:8880", options);
+            password: '2426f867',
+            cert: './js/cert.crt'
+        });
 
         this.client.on('connect', this.onConnect.bind(this));
         this.ignoreEvents = ['HOST', 'QUESTION'];
