@@ -12064,7 +12064,7 @@ var Tipu = function () {
             username: 'mailtokmahmed@gmail.com',
             password: '2426f867'
         };
-        this.client = mqtt.connect("ws://mqtt.dioty.co:8080", options);
+        this.client = mqtt.connect("wss://mqtt.dioty.co:8880", options);
 
         this.client.on('connect', this.onConnect.bind(this));
         this.ignoreEvents = ['HOST', 'QUESTION'];
