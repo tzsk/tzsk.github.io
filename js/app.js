@@ -12063,7 +12063,7 @@ var Tipu = function () {
         this.client = mqtt.connect("wss://mqtt.dioty.co:8880", {
             username: 'mailtokmahmed@gmail.com',
             password: '2426f867',
-            cert: 'https://tzsk.github.io/js/cert.crt'
+            cert: 'https://tzsk.github.io/js/dioty_ca.crt'
         });
 
         this.client.on('connect', this.onConnect.bind(this));
