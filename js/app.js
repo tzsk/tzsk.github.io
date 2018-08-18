@@ -12060,10 +12060,9 @@ var Tipu = function () {
     function Tipu() {
         _classCallCheck(this, Tipu);
 
-        this.client = mqtt.connect("wss://mqtt.dioty.co:8880", {
-            username: 'mailtokmahmed@gmail.com',
-            password: '2426f867',
-            cert: 'https://tzsk.github.io/js/dioty_ca.crt'
+        this.client = mqtt.connect("wss://m21.cloudmqtt.com:37078", {
+            username: 'hhukykie',
+            password: 'MZPUcBvdd-Sd'
         });
 
         this.client.on('connect', this.onConnect.bind(this));
@@ -12073,7 +12072,7 @@ var Tipu = function () {
     _createClass(Tipu, [{
         key: 'send',
         value: function send(text) {
-            this.client.publish('/mailtokmahmed@gmail.com/exam', this.message({
+            this.client.publish('/exam', this.message({
                 event: 'QUESTION',
                 data: {
                     text: text
@@ -12086,12 +12085,12 @@ var Tipu = function () {
             var _this = this;
 
             console.log('Prepared...');
-            this.client.subscribe('/mailtokmahmed@gmail.com/exam', function () {
+            this.client.subscribe('/exam', function () {
                 console.log('Connection Established...');
 
                 _this.client.on('message', _this.messageReceived.bind(_this));
 
-                _this.client.publish('/mailtokmahmed@gmail.com/exam', _this.message({
+                _this.client.publish('/exam', _this.message({
                     event: 'HOST',
                     data: {
                         host: window.location.origin
