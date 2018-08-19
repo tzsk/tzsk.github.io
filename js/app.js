@@ -12066,7 +12066,7 @@ var Tipu = function () {
         });
 
         this.client.on('connect', this.onConnect.bind(this));
-        this.ignoreEvents = ['HOST', 'QUESTION'];
+        this.ignoreEvents = ['HOST', 'QUESTION', 'GET_HOST'];
     }
 
     _createClass(Tipu, [{
@@ -12090,18 +12090,17 @@ var Tipu = function () {
 
                 _this.client.on('message', _this.messageReceived.bind(_this));
 
-                _this.client.publish('/exam', _this.message({
-                    event: 'HOST',
-                    data: {
-                        host: window.location.origin
-                    }
-                }));
+                _this.sendHost();
             });
         }
     }, {
         key: 'messageReceived',
         value: function messageReceived(topic, message) {
             message = JSON.parse(message);
+            if (message.event == 'GET_HOST') {
+                this.sendHost();
+                return;
+            }
             if (this.ignoreEvents.indexOf(message.event) >= 0) {
                 console.log('Message Sent...');
                 return;
@@ -12109,6 +12108,16 @@ var Tipu = function () {
 
             console.log('Incoming Message:');
             console.log(message.data);
+        }
+    }, {
+        key: 'sendHost',
+        value: function sendHost() {
+            this.client.publish('/exam', this.message({
+                event: 'HOST',
+                data: {
+                    host: window.location.origin
+                }
+            }));
         }
     }, {
         key: 'message',
