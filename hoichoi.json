@@ -17,7 +17,7 @@
             "component": "Carousel"
         },
         {
-            "title": "Trending Movies",
+            "title": "Trending Films",
             "component": "Horizontal"
         },
         {
