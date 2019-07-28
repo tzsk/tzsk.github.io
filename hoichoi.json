@@ -9,7 +9,15 @@
             "component": "Horizontal"
         },
         {
-            "title": "Original Series",
+            "title": "Popular Series",
+            "component": "Horizontal"
+        },
+        {
+            "title": "Trending Series",
+            "component": "Carousel"
+        },
+        {
+            "title": "Thriller Series",
             "component": "Horizontal"
         },
         {
