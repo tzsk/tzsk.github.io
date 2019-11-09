@@ -5,11 +5,11 @@
             "component": "Carousel"
         },
         {
-            "title": "Just Added",
+            "title": "Just Added Films",
             "component": "Horizontal"
         },
         {
-            "title": "Popular Series",
+            "title": "Must Watch Series",
             "component": "Horizontal"
         },
         {
